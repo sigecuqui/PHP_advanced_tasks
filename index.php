@@ -19,11 +19,7 @@ $police_report = [
 
 foreach ($police_report as $key => $report) {
     $police_report[$key]['warning_only'] = rand(0, 1) ? true : false;
-    if ($report['amount'] < 0) {
-        $police_report[$key]['class'] = 'expense';
-    } else {
-        $police_report[$key]['class'] = 'income';
-    }
+    $police_report[$key]['css_class'] = $report['amount'] >= 0 ? 'income' : 'expense';
 }
 
 var_dump($police_report);
