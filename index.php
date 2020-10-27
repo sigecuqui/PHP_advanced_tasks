@@ -1,9 +1,16 @@
 <?php
-$array = [9, 1, 2, 1, 4, 10, 5, 6, 6, 10, 6, 7];
-$result = array_unique($array);
-$array_new = array_values($result);
-
-var_dump($array_new);
+$suits = ['spades', 'diamonds', 'hearts', 'clubs'];
+$cards = ['A', 'K', 'Q', 'J', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+$deck = [];
+foreach ($suits as $suit) {
+    foreach ($cards as $card) {
+        $deck[] = [
+            'suit' => $suit,
+            'card' => $card
+        ];
+    }
+}
+var_dump($deck);
 ?>
 <!DOCTYPE html>
 <html lang="en">
