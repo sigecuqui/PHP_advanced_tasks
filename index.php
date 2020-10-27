@@ -1,14 +1,11 @@
 <?php
-$x = 2;
-$y = 10;
 function sum($x, $y) {
     return $x + $y;
 }
 
-$sum = sum($x, $y);
+$sum = sum(2, 10);
 
-var_dump($x);
-$h1 = "$x ir $y suma: $sum";
+$h1 = '$x ir $y suma: ' . $sum;
 ?>
 <!doctype html>
 <html lang="en">
