@@ -1,12 +1,9 @@
 <?php
-$str = "20.3k 3.8k 7.7k 992";
-$result = [];
-$array = explode(" ", $str);
-var_dump($array);
-foreach ($array as $string) {
-    $result[] = intval(str_replace([".", "k"], ["", "00"], $string));
-}
-var_dump($result);
+$array = [9, 1, 2, 1, 4, 10, 5, 6, 6, 10, 6, 7];
+$result = array_unique($array);
+$array_new = array_values($result);
+
+var_dump($array_new);
 ?>
 <!DOCTYPE html>
 <html lang="en">
