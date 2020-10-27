@@ -38,3 +38,21 @@ img {
     left: 0;
     position: absolute;
 }
+
+.in_stock {
+    color: green;
+    text-align: center;
+}
+
+.out_of_stock {
+    color: red;
+    text-align: center;
+}
+
+.grey {
+    filter: grayscale(100%);
+}
+
+.name {
+    text-align: center;
+}

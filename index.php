@@ -3,24 +3,28 @@ $products = [
     [
         'name' => 'Stumbro Degtinėla',
         'price' => 6.49,
-        'image' => 'https://images.kaina24.lt/6423/68/stumbras-vodka-simtmecio-1-l.jpg'
+        'image' => 'https://images.kaina24.lt/6423/68/stumbras-vodka-simtmecio-1-l.jpg',
+        'in_stock' => rand(0, 1)
     ],
     [
         'name' => 'Balzamas',
         'price' => 9.50,
         'price_special' => 7.99,
-        'image' => 'https://iki.lt/wp-content/uploads/alk/244784.jpg'
+        'image' => 'https://iki.lt/wp-content/uploads/alk/244784.jpg',
+        'in_stock' => rand(0, 1)
     ],
     [
         'name' => 'Naminukė',
         'price' => 5,
-        'image' => 'https://images.kaina24.lt/6423/85/absolut-vodka-0-7-l.jpg'
+        'image' => 'https://images.kaina24.lt/6423/85/absolut-vodka-0-7-l.jpg',
+        'in_stock' => rand(0, 1)
     ],
     [
         'name' => 'Tekilukė',
         'price' => 10,
         'price_special' => 8,
-        'image' => 'https://iki.lt/wp-content/uploads/alk/11496.jpg'
+        'image' => 'https://iki.lt/wp-content/uploads/alk/11496.jpg',
+        'in_stock' => rand(0, 1)
     ],
 ];
 
@@ -43,8 +47,8 @@ $discount = 0;
     <h1>Drink Catalogue</h1>
     <div class="products_card">
         <?php foreach ($products as $key => $product): ?>
-            <div class="product">
-                <img src="<?php print $products[$key]['image']; ?>" alt="drink">
+            <article class="product">
+                <h2 class="name"><?php print $products[$key]['name']; ?></h2>
                 <?php if (array_key_exists('price_special', $product)): ?>
                     <h2 class="price_special">
                         <?php print '-' . $discount = round(100 - $product['price_special'] * 100 / $product['price']) . '%'; ?>
@@ -53,7 +57,14 @@ $discount = 0;
                 <?php else: ?>
                     <h2 class="price"><?php print $products[$key]['price'] . ' EUR'; ?></h2>
                 <?php endif; ?>
-            </div>
+                <?php if ($products[$key]['in_stock']): ?>
+                    <h3 class="in_stock"><?php print 'Yra sandėlyje'; ?></h3>
+                    <img src="<?php print $products[$key]['image']; ?>" alt="drink">
+                <?php else: ?>
+                    <h3 class="out_of_stock"><?php print 'Nėra sandėlyje'; ?></h3>
+                    <img class="grey" src="<?php print $products[$key]['image']; ?>" alt="drink">
+                <?php endif; ?>
+            </article>
         <?php endforeach; ?>
     </div>
 </main>
