@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="219c095a-5b52-41df-a3b8-7f57e4441f40" name="Default Changelist" comment="drinks task style changed">
+    <list default="true" id="219c095a-5b52-41df-a3b8-7f57e4441f40" name="Default Changelist" comment="functions. 2 variantas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +47,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603702763877</updated>
-      <workItem from="1603702764911" duration="22234000" />
+      <workItem from="1603702764911" duration="26837000" />
     </task>
     <task id="LOCAL-00001" summary="police report php task">
       <created>1603705438881</created>
@@ -90,7 +91,21 @@
       <option name="project" value="LOCAL" />
       <updated>1603792788484</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="functions. 1 variantas">
+      <created>1603795998590</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1603795998590</updated>
+    </task>
+    <task id="LOCAL-00008" summary="functions. 2 variantas">
+      <created>1603796112266</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1603796112266</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,7 +118,9 @@
     <MESSAGE value="drinks task" />
     <MESSAGE value="drinks task +greyscale" />
     <MESSAGE value="drinks task style changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="drinks task style changed" />
+    <MESSAGE value="functions. 1 variantas" />
+    <MESSAGE value="functions. 2 variantas" />
+    <option name="LAST_COMMIT_MESSAGE" value="functions. 2 variantas" />
   </component>
   <component name="WindowStateProjectService">
     <state x="520" y="239" key="Github.ShareDialog" timestamp="1603705396225">
@@ -114,9 +131,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="477" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1603702783284" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1603792791627">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1603796116510">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1603792791627" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1603796116510" />
   </component>
 </project>
