@@ -24,6 +24,7 @@ img {
     color: white;
     top: 0;
     right: 0;
+    margin: 0;
 }
 
 .product {
@@ -37,6 +38,7 @@ img {
     top: 0;
     left: 0;
     position: absolute;
+    margin: 0;
 }
 
 .in_stock {
@@ -55,4 +57,5 @@ img {
 
 .name {
     text-align: center;
+    margin-top: 50px;
 }

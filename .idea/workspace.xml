@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="219c095a-5b52-41df-a3b8-7f57e4441f40" name="Default Changelist" comment="drinks task">
+    <list default="true" id="219c095a-5b52-41df-a3b8-7f57e4441f40" name="Default Changelist" comment="drinks task +greyscale">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
@@ -47,7 +47,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603702763877</updated>
-      <workItem from="1603702764911" duration="18038000" />
+      <workItem from="1603702764911" duration="19921000" />
     </task>
     <task id="LOCAL-00001" summary="police report php task">
       <created>1603705438881</created>
@@ -77,7 +77,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603788675224</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="drinks task +greyscale">
+      <created>1603790897060</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1603790897060</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -88,7 +95,8 @@
     <MESSAGE value="police report php task taisyta" />
     <MESSAGE value="police report php task taisyta2" />
     <MESSAGE value="drinks task" />
-    <option name="LAST_COMMIT_MESSAGE" value="drinks task" />
+    <MESSAGE value="drinks task +greyscale" />
+    <option name="LAST_COMMIT_MESSAGE" value="drinks task +greyscale" />
   </component>
   <component name="WindowStateProjectService">
     <state x="520" y="239" key="Github.ShareDialog" timestamp="1603705396225">
@@ -99,9 +107,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="477" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1603702783284" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1603788677564">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1603790898663">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1603788677564" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1603790898663" />
   </component>
 </project>
