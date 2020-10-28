@@ -1,29 +1,48 @@
 <?php
-$suits = ['spades', 'diamonds', 'hearts', 'clubs'];
-$cards = ['A', 'K', 'Q', 'J', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
-$deck = [];
-foreach ($suits as $suit) {
-    foreach ($cards as $card) {
-        $deck[] = [
-            'suit' => $suit,
-            'card' => $card
-        ];
+
+$x = rand(0, 100);
+
+function is_prime($number) {
+//    Early exit
+    if ($number === 1) {
+        return false;
     }
+
+    for ($i = 2; $i <= $number / 2; $i++) {
+        if ($number % $i == 0) {
+            return false;
+        }
+    }
+
+    return true;
 }
-var_dump($deck);
+
+$answer = is_prime($x);
+
+if ($answer) {
+    $h1 = "$x yra pirminis skaičius";
+} else {
+    $h1 = "$x nėra pirminis skaičius";
+}
+
 ?>
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Cars</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="style.css?<?php print time(); ?>">
+    <title>Functions</title>
 </head>
 <body>
-<header></header>
-<main>
-
-</main>
-<footer></footer>
+<h1><?php print $h1; ?></h1>
 </body>
 </html>
+
+
+
+
+
+
+
