@@ -1,8 +1,10 @@
 <?php
 
 $x = rand(0, 100);
+$y = rand(0, 100);
 
-function is_prime($number) {
+function is_prime($number)
+{
 //    Early exit
     if ($number === 1) {
         return false;
@@ -13,17 +15,30 @@ function is_prime($number) {
             return false;
         }
     }
-
     return true;
 }
 
-$answer = is_prime($x);
 
-if ($answer) {
-    $h1 = "$x yra pirminis skaičius";
+if (is_prime($x)) {
+    $p1 = "$x yra pirminis skaičius";
 } else {
-    $h1 = "$x nėra pirminis skaičius";
+    $p1 = "$x nėra pirminis skaičius";
 }
+
+if (is_prime($y)) {
+    $p2 = "$y yra pirminis skaičius";
+} else {
+    $p2 = "$y nėra pirminis skaičius";
+}
+
+function sum_if_prime($x, $y) {
+    if (is_prime($x) && is_prime($y)) {
+        return $x + $y;
+    }
+}
+
+$sum = sum_if_prime($x, $y);
+$p3 = "Pirm. sk. suma: $sum";
 
 ?>
 <!doctype html>
@@ -36,7 +51,9 @@ if ($answer) {
     <title>Functions</title>
 </head>
 <body>
-<h1><?php print $h1; ?></h1>
+<p><?php print $p1; ?></p>
+<p><?php print $p2; ?></p>
+<p><?php print $p3; ?></p>
 </body>
 </html>
 
