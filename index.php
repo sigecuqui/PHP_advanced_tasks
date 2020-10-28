@@ -1,44 +1,49 @@
 <?php
 
-$x = rand(0, 100);
-$y = rand(0, 100);
+$x = rand(1, 16);
+$y = rand(1, 16);
 
-function is_prime($number)
-{
-//    Early exit
+function is_prime($number) {
+    // Early exit
     if ($number === 1) {
         return false;
     }
 
-    for ($i = 2; $i <= $number / 2; $i++) {
+    for ($i = 2; $i <= $number/2; $i++) {
         if ($number % $i == 0) {
             return false;
         }
     }
+
     return true;
-}
-
-
-if (is_prime($x)) {
-    $p1 = "$x yra pirminis skaičius";
-} else {
-    $p1 = "$x nėra pirminis skaičius";
-}
-
-if (is_prime($y)) {
-    $p2 = "$y yra pirminis skaičius";
-} else {
-    $p2 = "$y nėra pirminis skaičius";
 }
 
 function sum_if_prime($x, $y) {
     if (is_prime($x) && is_prime($y)) {
         return $x + $y;
     }
+
+    return null;
 }
 
+function generate_answer($number) {
+    if (is_prime($number)) {
+        return "$number yra pirminis skaičius";
+    } else {
+        return "$number nėra pirminis skaičius";
+    }
+}
+
+$answer_x = generate_answer($x);
+$answer_y = generate_answer($y);
+
 $sum = sum_if_prime($x, $y);
-$p3 = "Pirm. sk. suma: $sum";
+
+if ($sum) {
+    $answer_sum = "Pirminių skaičių suma: $sum";
+} else {
+    $answer_sum = "Pirminių skaičių suma: --";
+}
 
 ?>
 <!doctype html>
@@ -47,16 +52,15 @@ $p3 = "Pirm. sk. suma: $sum";
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="style.css?<?php print time(); ?>">
+    <link rel="stylesheet" href="style.css">
     <title>Functions</title>
 </head>
 <body>
-<p><?php print $p1; ?></p>
-<p><?php print $p2; ?></p>
-<p><?php print $p3; ?></p>
+<p><?php print $answer_x; ?></p>
+<p><?php print $answer_y; ?></p>
+<p><?php print $answer_sum; ?></p>
 </body>
 </html>
-
 
 
 
