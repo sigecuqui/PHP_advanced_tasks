@@ -1,49 +1,19 @@
 <?php
 
-$x = rand(1, 16);
-$y = rand(1, 16);
+function generate_matrix($size) {
+    $generated_array = [];
 
-function is_prime($number) {
-    // Early exit
-    if ($number === 1) {
-        return false;
-    }
+    for ($i = 0; $i < $size; $i++) {
 
-    for ($i = 2; $i <= $number/2; $i++) {
-        if ($number % $i == 0) {
-            return false;
+        for ($j = 0; $j < $size; $j++) {
+            $generated_array[$i][$j] = rand(0, 1);
         }
     }
 
-    return true;
+    return $generated_array;
 }
 
-function sum_if_prime($x, $y) {
-    if (is_prime($x) && is_prime($y)) {
-        return $x + $y;
-    }
-
-    return null;
-}
-
-function generate_answer($number) {
-    if (is_prime($number)) {
-        return "$number yra pirminis skaičius";
-    } else {
-        return "$number nėra pirminis skaičius";
-    }
-}
-
-$answer_x = generate_answer($x);
-$answer_y = generate_answer($y);
-
-$sum = sum_if_prime($x, $y);
-
-if ($sum) {
-    $answer_sum = "Pirminių skaičių suma: $sum";
-} else {
-    $answer_sum = "Pirminių skaičių suma: --";
-}
+var_dump(generate_matrix(2));
 
 ?>
 <!doctype html>
@@ -56,12 +26,9 @@ if ($sum) {
     <title>Functions</title>
 </head>
 <body>
-<p><?php print $answer_x; ?></p>
-<p><?php print $answer_y; ?></p>
-<p><?php print $answer_sum; ?></p>
+
 </body>
 </html>
-
 
 
 
