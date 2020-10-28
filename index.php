@@ -1,26 +1,22 @@
 <?php
+$suits = ['spades', 'diamonds', 'hearts', 'clubs'];
+$cards = ['A', 'K', 'Q', 'J', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
 
-$names = [
-    'beavis',
-    'dZIGIS',
-    'krakamule',
-    'kontrimas',
-    'BARTOLOMEJUS',
-    'stase'
-];
-
-//ucwords — Uppercase the first character of each word in a string
-//strtolower — Lowercase
-function changed_names($names) {
-    $changed = [];
-    foreach ($names as $name) {
-        $changed[] = ucwords(strtolower($name));
+function cards_five($suits, $cards) {
+    $five_cards = [];
+    foreach ($suits as $suit) {
+        foreach ($cards as $card) {
+            $five_cards[] = [
+                'suit' => $suit,
+                'card' => $card
+            ];
+        }
     }
-    return $changed;
+    return $five_cards;
 }
-$x = changed_names($names);
+$deck = cards_five($suits, $cards);
 
-var_dump($x);
+var_dump($deck);
 ?>
 <!doctype html>
 <html lang="en">
@@ -32,6 +28,5 @@ var_dump($x);
     <title>Functions</title>
 </head>
 <body>
-
 </body>
 </html>
