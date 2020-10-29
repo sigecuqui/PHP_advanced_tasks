@@ -1,41 +1,47 @@
 <?php
 
-function deck() {
-    $cards = ['A', 'K', 'Q', 'J', 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
-    $type = ['Clubs', 'Diamonds', 'Hearts', 'Spades'];
-    $card_deck = [];
-    foreach ($cards as $keys => $card) {
-        foreach ($type as $key => $kind) {
-            $card_deck[] = [
-                'type' => $kind,
-                'card' => $card
-            ];
+/**
+ * Sukuria surodyto dydžio kvadratą.
+ * @param $size integer Eilučių ir stulpelių kaičius.
+ * @return array
+ */
+function generate_matrix($size) {
+    $generated_array = [];
+
+    for ($i = 0; $i < $size; $i++) {
+
+        for ($j = 0; $j < $size; $j++) {
+            $generated_array[$i][$j] = rand(0, 1);
         }
     }
-    return $card_deck;
-}
-$card_deck = deck();
 
-function draw_card($deck) {
-    $five_cards = [];
-    for ($i = 1; $i <= 5; $i++) {
-        $card_name = rand(0, count($deck) - 1);
-        $five_cards[] = $deck[$card_name];
-        array_splice($deck, $card_name, 1);
+    return $generated_array;
+}
+
+function get_winning_rows($matrix) {
+    $winning_rows = [];
+
+    foreach ($matrix as $key => $row) {
+        $column_sum = count($row);
+        $color_sum = 0;
+
+        foreach ($row as $column) {
+            $color_sum += $column;
+        }
+
+        if ($color_sum === 0 || $column_sum === $color_sum) {
+            $winning_rows[] = $key;
+        }
     }
-    return $five_cards;
-}
-$cards_on_table = draw_card($card_deck);
 
-function check($cards_on_table) {
-    foreach ($cards_on_table as $check) {
-        if (strpos($check['type'], $check['type'])) {
-            return 'Yes';
-        } else return 'No';
-    }
+    return $winning_rows;
 }
 
-$answer = check($cards_on_table)
+$matrix = generate_matrix(3);
+
+
+var_dump(get_winning_rows($matrix));
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -43,18 +49,36 @@ $answer = check($cards_on_table)
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <title>Functions</title>
+    <style>
+        div {
+            display: flex;
+        }
+        span {
+            width: 80px;
+            height: 80px;
+            margin: 5px;
+        }
+        .blue {
+            background: darkcyan;
+        }
+        .gold {
+            background: gold;
+        }
+    </style>
 </head>
 <body>
-<section>
-    <?php foreach ($cards_on_table as $on_table): ?>
-        <div class="card <?php print $on_table['type']; ?>"><?php print $on_table['type']; ?>
-            <h2><?php print $on_table['card']; ?></h2>
-        </div>
-    <?php endforeach; ?>
-</section>
-<h3>Is it flush?: <?php print $answer; ?></h3>
+<?php foreach ($matrix as $row): ?>
+    <div>
+        <?php foreach ($row as $col): ?>
+            <?php if ($col === 1): ?>
+                <span class="blue"></span>
+            <?php else: ?>
+                <span class="gold"></span>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </div>
+<?php endforeach; ?>
 </body>
 </html>
