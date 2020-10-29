@@ -1,47 +1,26 @@
 <?php
-
-/**
- * Sukuria surodyto dydžio kvadratą.
- * @param $size integer Eilučių ir stulpelių kaičius.
- * @return array
- */
 function generate_matrix($size) {
     $generated_array = [];
-
     for ($i = 0; $i < $size; $i++) {
-
         for ($j = 0; $j < $size; $j++) {
             $generated_array[$i][$j] = rand(0, 1);
         }
     }
-
     return $generated_array;
 }
+$matrix = generate_matrix(rand(2, 4));
 
-function get_winning_rows($matrix) {
-    $winning_rows = [];
-
-    foreach ($matrix as $key => $row) {
-        $column_sum = count($row);
-        $color_sum = 0;
-
-        foreach ($row as $column) {
-            $color_sum += $column;
-        }
-
-        if ($color_sum === 0 || $column_sum === $color_sum) {
-            $winning_rows[] = $key;
+function winning_rows($array) {
+    $generated_new_array = [];
+    foreach ($array as $index => $numbers) {
+        if (count(array_unique($numbers)) === 1) {
+            $generated_new_array[] = $index;
         }
     }
-
-    return $winning_rows;
+    return $generated_new_array;
 }
 
-$matrix = generate_matrix(3);
-
-
-var_dump(get_winning_rows($matrix));
-
+$winning = winning_rows($matrix);
 ?>
 <!doctype html>
 <html lang="en">
@@ -49,34 +28,48 @@ var_dump(get_winning_rows($matrix));
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Functions</title>
-    <style>
-        div {
-            display: flex;
-        }
-        span {
-            width: 80px;
-            height: 80px;
-            margin: 5px;
-        }
-        .blue {
-            background: darkcyan;
-        }
-        .gold {
-            background: gold;
-        }
-    </style>
 </head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    .container {
+        display: flex;
+    }
+
+    .gold {
+        width: 100px;
+        height: 100px;
+        background-color: gold;
+        margin: 5px;
+    }
+
+    .blue {
+        width: 100px;
+        height: 100px;
+        background-color: darkblue;
+        margin: 5px;
+    }
+
+    .border {
+        border: 2px solid red;
+        width: fit-content;
+    }
+</style>
 <body>
-<?php foreach ($matrix as $row): ?>
-    <div>
+<?php foreach ($matrix as $index => $row): ?>
+    <div class="container <?php print in_array($index, $winning) ? 'border' : ''; ?>">
         <?php foreach ($row as $col): ?>
-            <?php if ($col === 1): ?>
-                <span class="blue"></span>
-            <?php else: ?>
-                <span class="gold"></span>
-            <?php endif; ?>
+            <span class="<?php print $col ? 'blue' : 'gold'; ?>"></span>
         <?php endforeach; ?>
     </div>
 <?php endforeach; ?>
