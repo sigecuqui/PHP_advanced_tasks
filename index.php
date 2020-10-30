@@ -1,19 +1,17 @@
 <?php
 $array = ['s', 's', 'a', 'k', 'l', 'm', 'G', 'M', 'N', 'j', 'o', 'O'];
 
-function count_values($array, $value) {
-    $counting_values = 0;
+function change_values(&$array, $from, $to) {
 
-    foreach ($array as $search) {
-        if ($search === $value) {
-            $counting_values++;
+    foreach ($array as &$value) {
+        if ($value === $from) {
+            $value = $to;
         }
     }
-    return $counting_values;
 }
 
-var_dump(count_values($array, 's'));
-
+change_values($array, 's', 'S');
+var_dump($array);
 ?>
 <!doctype html>
 <html lang="en">
