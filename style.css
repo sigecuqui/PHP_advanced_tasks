@@ -17,7 +17,11 @@ h3 {
     font-size: 80px;
 }
 
-h2 {
+.same {
+    font-size: 80px;
+}
+
+.card-number {
     position: absolute;
     top: 0;
     left: 15%;
@@ -57,6 +61,7 @@ h2 {
 .Spades {
     background-image: url("https://svgsilh.com/png-1024/145116.png");
 }
+
 
 
 
