@@ -1,17 +1,19 @@
 <?php
-$house = [];
+$array = ['s', 's', 'a', 'k', 'l', 'm', 'G', 'M', 'N', 'j', 'o', 'O'];
 
-for ($i = 0; $i < 5; $i++) {
-    $house[] = 'namas su elektra';
+function count_values($array, $value) {
+    $counting_values = 0;
+
+    foreach ($array as $search) {
+        if ($search === $value) {
+            $counting_values++;
+        }
+    }
+    return $counting_values;
 }
 
-foreach ($house as $key => $change) {
-    $house[$key++] = &$change;
-}
+var_dump(count_values($array, 's'));
 
-$house[3] = 'dingo elektra';
-
-var_dump($house);
 ?>
 <!doctype html>
 <html lang="en">
