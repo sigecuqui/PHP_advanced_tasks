@@ -1,17 +1,15 @@
 <?php
-$array = ['s', 's', 'a', 'k', 'l', 'm', 'G', 'M', 'N', 'j', 'o', 'O'];
-
-function change_values(&$array, $from, $to) {
-
-    foreach ($array as &$value) {
-        if ($value === $from) {
-            $value = $to;
-        }
+$atsakymas = '';
+if (isset($_POST['submit'])) {
+    if ($_POST['submit'] === 'kelti') {
+        $sum = $_POST['number']*$_POST['number'];
+        $atsakymas = $sum;
+    }
+    if($_POST['submit'] === 'saknis'){
+        $sum = sqrt($_POST['number']);
+        $atsakymas = $sum;
     }
 }
-
-change_values($array, 's', 'S');
-var_dump($array);
 ?>
 <!doctype html>
 <html lang="en">
@@ -21,9 +19,16 @@ var_dump($array);
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>Functions</title>
+    <title>Document</title>
+    <style>
+    </style>
 </head>
 <body>
-
+<h1><?php print $atsakymas; ?></h1>
+<form method="POST">
+    <input type="number" name='number'>
+    <input type="submit" name='submit' value = 'kelti'>
+    <input type="submit" name='submit' value = 'saknis'>
+</form>
 </body>
 </html>
