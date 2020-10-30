@@ -1,67 +1,24 @@
-* {
-    font-family: Bahnschrift;
-}
-
-body {
-    text-align: center;
-}
-
-section {
+main {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
-    justify-items: center;
 }
 
 h3 {
-    font-size: 80px;
+    font-size: 25px;
 }
 
-.same {
-    font-size: 80px;
-}
-
-.card-number {
-    position: absolute;
-    top: 0;
-    left: 15%;
-    color: black;
-    font-size: 45px;
-}
-
-.card {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 400px;
-    width: 200px;
+.movie_card {
     border: 1px solid black;
-    border-radius: 10px;
-    font-size: 30px;
-    color: white;
-    background-color: azure;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
-.Clubs {
-    background-image: url("https://cdn.pixabay.com/photo/2012/04/13/20/38/clubs-33561_640.png");
+img {
+    max-height: 300px;
 }
 
-.Diamonds {
-    background-image: url("https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/Card_diamond.svg/1200px-Card_diamond.svg.png");
+ul {
+    list-style: none;
 }
-
-.Hearts {
-    background-image: url("https://cdn.pixabay.com/photo/2012/04/13/20/38/hearts-33564_1280.png");
-}
-
-.Spades {
-    background-image: url("https://svgsilh.com/png-1024/145116.png");
-}
-
 
 
 
