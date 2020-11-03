@@ -1,17 +1,11 @@
 <?php
-$answer = '';
+$width = 50;
+$value = 0;
 
-function square(&$answer) {
-    if (isset($_POST['number'])) {
-        if (is_numeric($_POST['number'])) {
-            $answer = $_POST['number'] * $_POST['number'];
-        } else {
-            $answer = 'Please enter a number';
-        }
-    }
+if (isset($_POST['button'])) {
+    $value = (int)$_POST['rangeBanana'];
+    $width = $value * 10;
 }
-
-square($answer);
 ?>
 <!doctype html>
 <html lang="en">
@@ -21,15 +15,26 @@ square($answer);
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>Forma</title>
+    <title>Forms</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input, button {
+            width: 300px;
+        }
+    </style>
 </head>
 <body>
 <main>
     <form method="post">
-            <input name="number" type="text">
-            <button type="submit" name="button">Submit</button>
-            <p><?php print $answer; ?></p>
+        <input type="range" min="1" max="100" value="<?php print $value; ?>" class="slider" name="rangeBanana">
+        <button type="submit" name="button">Submit</button>
     </form>
+    <img style="width: <?php print $width; ?>px"
+         src="https://i1.wp.com/freepngimages.com/wp-content/uploads/2015/11/banana-transparent-background.png?fit=600%2C300"
+         alt="banana">
 </main>
 </body>
-</html>
