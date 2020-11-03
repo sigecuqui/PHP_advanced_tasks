@@ -1,28 +1,17 @@
 <?php
-$email = isset($_POST['email']) ? $_POST['email'] : '';
+$numbers_array = [838, 121, 344, 555, 768, 878, 987, 345, 565];
 
-$form = [
-    'email' => [
-        'label' => 'Email',
-        'type' => 'text',
-        'placeholder' => 'Sigis@gmail.com'
-    ],
-    'password' => [
-        'label' => 'Password',
-        'type' => 'password',
-        'placeholder' => 'Your password...'
-    ]
-];
-
-function get_clean_input($form) {
-    $parameters = [];
-    foreach ($form as $index => $input) {
-        $parameters[$index] = FILTER_SANITIZE_SPECIAL_CHARS;
+function palindromes(&$array) {
+    foreach ($array as $index => &$value) {
+        $reverse = intval(strrev($value));
+        if ($value !== $reverse) {
+            array_splice($array, $index, 1);
+        }
     }
-    return filter_input_array(INPUT_POST, $parameters);
 }
 
-$svarus_inputai = get_clean_input($form);
+palindromes($numbers_array);
+var_dump($numbers_array);
 ?>
 <!doctype html>
 <html lang="en">
@@ -32,22 +21,10 @@ $svarus_inputai = get_clean_input($form);
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>Forma</title>
-
+    <title>Functions</title>
 </head>
 <body>
 <main>
-
-    <form method="post">
-        <?php foreach ($form as $input_name => $input): ?>
-            <label><?php print $input['label']; ?>
-                <input name="<?php print $input_name; ?>" type="<?php print $input['type']; ?>>"
-                       placeholder="<?php print $input['placeholder']; ?>">
-            </label>
-        <?php endforeach; ?>
-        <button name="button">Login</button>
-    </form>
-
 </main>
 </body>
 </html>
