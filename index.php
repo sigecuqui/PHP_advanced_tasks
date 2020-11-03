@@ -1,52 +1,22 @@
 <?php
-$movies = [
-    [
-        'image' => 'https://upload.wikimedia.org/wikipedia/en/0/03/Leon-poster.jpg',
-        'name' => 'Leon: The Professional',
-        'kurejas' => 'Luc Besson',
-        'metai' => 1994,
-        'zanras' => ['Veiksmo', 'Drama'],
-        'aktoriai' => ['Natalie Portman', 'Jean Reno', 'Gary Oldman']
-    ],
-    [
-        'image' => 'https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY1200_CR107,0,630,1200_AL_.jpg',
-        'name' => 'The Godfather',
-        'kurejas' => 'Francis Ford Coppola',
-        'metai' => 1972,
-        'zanras' => ['Kriminalinis', 'Drama'],
-        'aktoriai' => ['Al Pacino', 'Marlon Brando', 'James Caan']
-    ],
-    [
-        'image' => 'https://upload.wikimedia.org/wikipedia/en/thumb/b/b7/Girl%2C_Interrupted_%281999%29.png/220px-Girl%2C_Interrupted_%281999%29.png',
-        'name' => 'Girl, Interrupted',
-        'kurejas' => 'James Mangold',
-        'metai' => 1999,
-        'zanras' => ['Drama'],
-        'aktoriai' => ['Angelina Jolie', 'Winona Ryder', 'Brittany Murphy']
-    ],
-];
+$description = '';
+$name = '';
+$surname = '';
+$age = '';
+$level = '';
+$year = '';
 
-function filter($movies, $year) {
-    $filtered_list = [];
-    foreach ($movies as $value) {
-        if ($value['metai'] > $year) {
-            $filtered_list[] = $value;
-        }
-    }
-    return $filtered_list;
-}
-
-$movie_filter = filter($movies, 1990);
-
-function add_name(&$movies, $movie, $actors) {
-    foreach ($movies as &$value) {
-        if ($value['name'] === $movie) {
-            $value['aktoriai'][] = $actors;
-        }
+if (isset($_POST['submit'])) {
+    if ($_POST['submit'] === 'PATEIKTI') {
+        $name = $_POST['name'];
+        $surname = $_POST['surname'];
+        $age = $_POST['age'];
+        $year = 2020 - (int)$age;
+        $level = $_POST['level'];
+        $description = "$name, gimęs(-usi) $year, yra $level PHP programuotojas.";
+        $_POST['form'] = '';
     }
 }
-
-add_name($movies, 'Leon: The Professional', 'Sige Gige');
 ?>
 <!doctype html>
 <html lang="en">
@@ -56,24 +26,35 @@ add_name($movies, 'Leon: The Professional', 'Sige Gige');
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Forma</title>
     <style>
     </style>
 </head>
 <body>
 <main>
-    <?php foreach ($movies as $movie): ?>
-        <article class="movie_card">
-            <img src="<?php print $movie['image']; ?>" alt="image">
-            <h2><?php print $movie['name']; ?></h2>
-            <h3><?php print $movie['kurejas']; ?></h3>
-            <h3><?php print $movie['metai']; ?></h3>
-            <h3><?php print implode(', ', $movie['zanras']); ?></h3>
-            <ul>
-                <li><?php print implode(', ', $movie['aktoriai']); ?></li>
-            </ul>
-        </article>
-    <?php endforeach; ?>
+    <?php if (isset($_POST['submit'])): ?>
+        <div class="block">
+            <p>Vardas: <?php print $name; ?></p>
+            <p>Pavardė: <?php print $surname; ?></p>
+            <p>Amžius: <?php print $age; ?></p>
+            <p>Lygis: <?php print $level; ?></p>
+            <p class="description"><?php print $description; ?></p>
+        </div>
+    <?php else: ?>
+        <h1>Užpildyk formą:</h1>
+        <form method="POST" name="form">
+            <input type="text" name="name" placeholder="Vardas">
+            <input type="text" name="surname" placeholder="Pavardė">
+            <input type="number" name="age" placeholder="Amžius">
+            <label id="options">Kaip vertini savo PHP žinias?</label>
+            <select name="level" id="options">
+                <option value="prastas">Prastai</option>
+                <option value="neblogas">Neblogai</option>
+                <option value="puikus">Puikiai</option>
+            </select>
+            <input type="submit" name="submit" value="PATEIKTI">
+        </form>
+    <?php endif; ?>
 </main>
 </body>
 </html>
