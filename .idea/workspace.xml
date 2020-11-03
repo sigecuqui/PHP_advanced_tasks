@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="219c095a-5b52-41df-a3b8-7f57e4441f40" name="Default Changelist" comment="forma, su apsauga nuo nulauzimo">
+    <list default="true" id="219c095a-5b52-41df-a3b8-7f57e4441f40" name="Default Changelist" comment="functions, references, splice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
@@ -65,7 +65,7 @@
       <option name="presentableId" value="Default" />
       <updated>1603702763877</updated>
       <workItem from="1603702764911" duration="76572000" />
-      <workItem from="1604387238811" duration="14981000" />
+      <workItem from="1604387238811" duration="17652000" />
     </task>
     <task id="LOCAL-00001" summary="police report php task">
       <created>1603705438881</created>
@@ -284,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604401961748</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="functions, references, splice">
+      <created>1604408742982</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1604408742982</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,7 +309,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="drinks task style changed" />
     <MESSAGE value="functions. 1 variantas" />
     <MESSAGE value="functions. 2 variantas" />
     <MESSAGE value="uzduotys viename su masinomis" />
@@ -327,7 +333,8 @@
     <MESSAGE value="forma, ilgesnis variantas su atskirais kintamaisiais." />
     <MESSAGE value="forma, didejantis bananas" />
     <MESSAGE value="forma, su apsauga nuo nulauzimo" />
-    <option name="LAST_COMMIT_MESSAGE" value="forma, su apsauga nuo nulauzimo" />
+    <MESSAGE value="functions, references, splice" />
+    <option name="LAST_COMMIT_MESSAGE" value="functions, references, splice" />
   </component>
   <component name="WindowStateProjectService">
     <state x="520" y="239" key="Github.ShareDialog" timestamp="1603705396225">
@@ -338,10 +345,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="477" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1603702783284" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1604401963011">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1604408744803">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="-1687" y="75" key="Vcs.Push.Dialog.v2/-1920.0.1280.693/0.0.1920.1040@-1920.0.1280.693" timestamp="1603962306673" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1604401963011" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1604408744803" />
   </component>
 </project>

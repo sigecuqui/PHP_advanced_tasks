@@ -1,17 +1,27 @@
 <?php
-$numbers_array = [838, 121, 344, 555, 768, 878, 987, 345, 565];
+$sentence = 'vagi vagi vagi na';
 
-function palindromes(&$array) {
-    foreach ($array as $index => &$value) {
-        $reverse = intval(strrev($value));
-        if ($value !== $reverse) {
-            array_splice($array, $index, 1);
+function change(&$sentence) {
+    $str_implode = str_split($sentence);
+
+    $caps = true;
+
+    foreach ($str_implode as $key => $letter) {
+        if ($caps) {
+            $out = strtoupper($letter);
+            if ($out !== " ") //not a space character
+                $caps = false;
+        } else {
+            $out = strtolower($letter);
+            $caps = true;
         }
+        $str_implode[$key] = $out;
     }
-}
 
-palindromes($numbers_array);
-var_dump($numbers_array);
+    $sentence = implode('', $str_implode);
+}
+change($sentence);
+var_dump($sentence);
 ?>
 <!doctype html>
 <html lang="en">
