@@ -1,11 +1,56 @@
 <?php
-$width = 50;
-$value = 0;
 
-if (isset($_POST['button'])) {
-    $value = (int)$_POST['rangeBanana'];
-    $width = $value * 10;
-}
+require './functions/html.php';
+require './functions/form.php';
+
+$form = [
+    'fields' => [
+        'email' => [
+            'label' => 'Email:',
+            'type' => 'text',
+            'value' => 'sigis@gmail.com',
+            'extra' => [
+                'attr' => [
+                    'placeholder' => 'sigis@gmail.com',
+                    'class' => 'input-field'
+                ]
+            ]
+        ],
+        'password' => [
+            'label' => 'Password:',
+            'type' => 'password',
+            'extra' => [
+                'attr' => [
+                    'placeholder' => 'Your password...',
+                    'class' => 'input-field'
+                ]
+            ]
+        ]
+    ],
+    'buttons' => [
+        'login' => [
+            'title' => 'Log in',
+            'type' => 'submit',
+            'extra' => [
+                'attr' => [
+                    'class' => 'btn'
+                ]
+            ]
+        ],
+        'clear' => [
+            'title' => 'Clear',
+            'type' => 'reset',
+            'extra' => [
+                'attr' => [
+                    'class' => 'btn'
+                ]
+            ]
+        ]
+    ]
+];
+
+$svarus_inputai = get_clean_input($form);
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -17,24 +62,24 @@ if (isset($_POST['button'])) {
     <link rel="stylesheet" href="style.css">
     <title>Forms</title>
     <style>
-        form {
-            display: flex;
-            flex-direction: column;
-        }
 
-        input, button {
-            width: 300px;
-        }
     </style>
 </head>
 <body>
 <main>
     <form method="post">
-        <input type="range" min="1" max="100" value="<?php print $value; ?>" class="slider" name="rangeBanana">
-        <button type="submit" name="button">Submit</button>
+        <?php foreach($form["fields"] as $input_name => $input): ?>
+            <label>
+                <span><?php print $input["label"]; ?></span>
+                <input <?php print input_attr($input_name, $input); ?>>
+            </label>
+        <?php endforeach; ?>
+        <?php foreach($form["buttons"] as $button_name => $button): ?>
+            <button <?php print button_attr($button_name, $button); ?>>
+                <?php print $button["title"]; ?>
+            </button>
+        <?php endforeach; ?>
     </form>
-    <img style="width: <?php print $width; ?>px"
-         src="https://i1.wp.com/freepngimages.com/wp-content/uploads/2015/11/banana-transparent-background.png?fit=600%2C300"
-         alt="banana">
 </main>
 </body>
+</html>

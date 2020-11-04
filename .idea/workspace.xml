@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="219c095a-5b52-41df-a3b8-7f57e4441f40" name="Default Changelist" comment="functions">
+    <list default="true" id="219c095a-5b52-41df-a3b8-7f57e4441f40" name="Default Changelist" comment="form. banana range. is there an error?">
+      <change afterPath="$PROJECT_DIR$/functions/form.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions/html.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
@@ -52,6 +54,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -65,7 +68,8 @@
       <option name="presentableId" value="Default" />
       <updated>1603702763877</updated>
       <workItem from="1603702764911" duration="76572000" />
-      <workItem from="1604387238811" duration="21688000" />
+      <workItem from="1604387238811" duration="21948000" />
+      <workItem from="1604472587837" duration="11168000" />
     </task>
     <task id="LOCAL-00001" summary="police report php task">
       <created>1603705438881</created>
@@ -305,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604413998421</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="form. banana range. is there an error?">
+      <created>1604416114963</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1604416114963</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,9 +332,9 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="functions. 2 variantas" />
     <MESSAGE value="uzduotys viename su masinomis" />
     <MESSAGE value="change string" />
     <MESSAGE value="array" />
@@ -348,21 +359,26 @@
     <MESSAGE value="functions, references, splice" />
     <MESSAGE value="functions, references, didzioji mazoji" />
     <MESSAGE value="functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="functions" />
+    <MESSAGE value="form. banana range. is there an error?" />
+    <option name="LAST_COMMIT_MESSAGE" value="form. banana range. is there an error?" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1604427245941">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1604427245941" />
     <state x="520" y="239" key="Github.ShareDialog" timestamp="1603705396225">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="520" y="239" key="Github.ShareDialog/0.0.1280.680@0.0.1280.680" timestamp="1603705396225" />
-    <state x="477" y="264" key="NewPhpFileDialog" timestamp="1603702783284">
+    <state x="477" y="264" key="NewPhpFileDialog" timestamp="1604487565437">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="477" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1603702783284" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1604414000037">
+    <state x="477" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1604487565437" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1604416116391">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="-1687" y="75" key="Vcs.Push.Dialog.v2/-1920.0.1280.693/0.0.1920.1040@-1920.0.1280.693" timestamp="1603962306673" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1604414000037" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1604416116391" />
   </component>
 </project>
