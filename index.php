@@ -1,6 +1,36 @@
 <?php
-//var_dump($_POST);
+
+function weather_choice($weather_option)
+{
+    $message = '';
+    switch ($weather_option) {
+        case 'sunny':
+            {
+                $message = 'Pagaliau saulutė!';
+            }
+            break;
+        case 'rainy':
+            {
+                $message = 'Geriau lįsk po pledu';
+            }
+            break;
+        case 'snowing':
+            {
+                $message = 'Statom senį besmegenį?';
+            }
+            break;
+        case 'overcast':
+            {
+                $message = 'Ajajajoooo cepelininis dangus';
+            }
+            break;
+    }
+
+    return $message;
+}
+
 ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,33 +38,44 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tree</title>
+    <title>Weather</title>
     <style>
-        .wrapper {
-            text-align: center;
-        }
         form {
-            margin-bottom: 50px;
+            margin: 0 auto;
+            padding: 20px;
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            box-shadow: 0 2px 4px #444444;
+            box-sizing: border-box;
+        }
+
+        label, button, select {
+            margin: 20px 0;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
-<div class="wrapper">
-    <form method="POST">
-        <label for="enter_number">Enter number:</label>
-        <input type="text" id="enter_number" name="number">
-        <button type="submit">Enter!</button>
-    </form>
-    <?php if (isset($_POST['number']) && is_numeric($_POST['number']) && $_POST['number'] > 1) : ?>
-        <?php for ($x = 1; $x <= $_POST['number']; $x++): ?>
-            <?php for ($y = 1; $y <= $x; $y++): ?>
-                <span>*</span>
-            <?php endfor; ?>
-            <br>
-        <?php endfor; ?>
+
+<form method="post">
+    <label for="weather">Select the weather type today: </label>
+    <select id="weather" name="weather">
+        <option value="">--Make a choice--</option>
+        <option value="sunny">Saulėta</option>
+        <option value="rainy">Lietinga</option>
+        <option value="snowing">Snigs</option>
+        <option value="overcast">Debesuota</option>
+    </select>
+    <button type="submit">Submit</button>
+    <?php if (!empty($_POST['weather'])): ?>
+        <h3><?php print weather_choice($_POST['weather']); ?></h3>
     <?php else: ?>
-        <div style="color: #8b0000;">Please enter number which is more than 1</div>
+        <h3>Pasirink variantą :)</h3>
     <?php endif; ?>
-</div>
+</form>
+
 </body>
 </html>
+
