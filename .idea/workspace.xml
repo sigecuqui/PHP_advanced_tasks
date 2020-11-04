@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="219c095a-5b52-41df-a3b8-7f57e4441f40" name="Default Changelist" comment="tree of number">
+    <list default="true" id="219c095a-5b52-41df-a3b8-7f57e4441f40" name="Default Changelist" comment="weather choice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
@@ -67,7 +67,7 @@
       <updated>1603702763877</updated>
       <workItem from="1603702764911" duration="76572000" />
       <workItem from="1604387238811" duration="21948000" />
-      <workItem from="1604472587837" duration="13544000" />
+      <workItem from="1604472587837" duration="14955000" />
     </task>
     <task id="LOCAL-00001" summary="police report php task">
       <created>1603705438881</created>
@@ -328,7 +328,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604493790680</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="weather choice">
+      <created>1604495310018</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1604495310018</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,7 +354,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="array" />
     <MESSAGE value="array kortos 1 uzduotis" />
     <MESSAGE value="functions primary numbers" />
     <MESSAGE value="functions: 2 primary numbers, my long version" />
@@ -372,7 +378,8 @@
     <MESSAGE value="form. banana range. is there an error?" />
     <MESSAGE value="clean form code" />
     <MESSAGE value="tree of number" />
-    <option name="LAST_COMMIT_MESSAGE" value="tree of number" />
+    <MESSAGE value="weather choice" />
+    <option name="LAST_COMMIT_MESSAGE" value="weather choice" />
   </component>
   <component name="WindowStateProjectService">
     <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1604427245941">
@@ -387,10 +394,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="477" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1604493115496" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1604493792469">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1604495311585">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="-1687" y="75" key="Vcs.Push.Dialog.v2/-1920.0.1280.693/0.0.1920.1040@-1920.0.1280.693" timestamp="1603962306673" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1604493792469" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1604495311585" />
   </component>
 </project>
