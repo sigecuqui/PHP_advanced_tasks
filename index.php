@@ -1,17 +1,33 @@
 <?php
-
+$day = '';
 $answer = '';
 
-if (isset($_POST['age'])) {
-    if ((int)$_POST['age'] >= 18 && (int)$_POST['age'] <= 26 && $_POST['teistumas'] === 'neteistas') {
-        $answer = 'Jūs esate šaukiamas į kariuomenę';
-    } else {
-        $answer = 'Jūs nesate šaukiamas į kariuomenę';
+if (isset($_POST['day'])) {
+    $day = date('N', strtotime('+1 day'));
+    switch ($day) {
+        case 1:
+            $answer ="Pirmadienis";
+            break;
+        case 2:
+            $answer = "Antradienis";
+            break;
+        case 3:
+            $answer ="Trečiadienis";
+            break;
+        case 4:
+            $answer ="Ketvirtadienis";
+            break;
+        case 5:
+            $answer ="Penktadienis";
+            break;
+        case 6:
+            $answer ="Šeštadienis";
+            break;
+        case 7:
+            $answer ="Sekmadienis";
+            break;
     }
-} else {
-    $answer = 'Įveskite amžių';
 }
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -20,7 +36,7 @@ if (isset($_POST['age'])) {
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Kariuomene</title>
+    <title>Weekday</title>
     <style>
         form {
             margin: 0 auto;
@@ -38,15 +54,10 @@ if (isset($_POST['age'])) {
 </head>
 <body>
 <form method="post">
-    <label for="weather">Provide your age:</label>
-    <input type="number" name="age" placeholder="Amžius" required>
-    Teistas
-    <input type="radio" value="teistas" name="teistumas">
-    Neteistas
-    <input type="radio" value="neteistas" name="teistumas">
-    <button type="submit">Submit</button>
-<h2><?php print $answer; ?></h2>
+    <button type="submit" name="day">Spausdinti dieną</button>
+   <?php if (isset($_POST['day'])): ?>
+    <h2><?php print $answer; ?></h2>
+    <?php endif; ?>
 </form>
 </body>
 </html>
-
