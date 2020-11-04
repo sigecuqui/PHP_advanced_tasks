@@ -1,56 +1,5 @@
 <?php
-
-require './functions/html.php';
-require './functions/form.php';
-
-$form = [
-    'fields' => [
-        'email' => [
-            'label' => 'Email:',
-            'type' => 'text',
-            'value' => 'sigis@gmail.com',
-            'extra' => [
-                'attr' => [
-                    'placeholder' => 'sigis@gmail.com',
-                    'class' => 'input-field'
-                ]
-            ]
-        ],
-        'password' => [
-            'label' => 'Password:',
-            'type' => 'password',
-            'extra' => [
-                'attr' => [
-                    'placeholder' => 'Your password...',
-                    'class' => 'input-field'
-                ]
-            ]
-        ]
-    ],
-    'buttons' => [
-        'login' => [
-            'title' => 'Log in',
-            'type' => 'submit',
-            'extra' => [
-                'attr' => [
-                    'class' => 'btn'
-                ]
-            ]
-        ],
-        'clear' => [
-            'title' => 'Clear',
-            'type' => 'reset',
-            'extra' => [
-                'attr' => [
-                    'class' => 'btn'
-                ]
-            ]
-        ]
-    ]
-];
-
-$svarus_inputai = get_clean_input($form);
-
+//var_dump($_POST);
 ?>
 <!doctype html>
 <html lang="en">
@@ -59,27 +8,33 @@ $svarus_inputai = get_clean_input($form);
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <title>Forms</title>
+    <title>Tree</title>
     <style>
-
+        .wrapper {
+            text-align: center;
+        }
+        form {
+            margin-bottom: 50px;
+        }
     </style>
 </head>
 <body>
-<main>
-    <form method="post">
-        <?php foreach($form["fields"] as $input_name => $input): ?>
-            <label>
-                <span><?php print $input["label"]; ?></span>
-                <input <?php print input_attr($input_name, $input); ?>>
-            </label>
-        <?php endforeach; ?>
-        <?php foreach($form["buttons"] as $button_name => $button): ?>
-            <button <?php print button_attr($button_name, $button); ?>>
-                <?php print $button["title"]; ?>
-            </button>
-        <?php endforeach; ?>
+<div class="wrapper">
+    <form method="POST">
+        <label for="enter_number">Enter number:</label>
+        <input type="text" id="enter_number" name="number">
+        <button type="submit">Enter!</button>
     </form>
-</main>
+    <?php if (isset($_POST['number']) && is_numeric($_POST['number']) && $_POST['number'] > 1) : ?>
+        <?php for ($x = 1; $x <= $_POST['number']; $x++): ?>
+            <?php for ($y = 1; $y <= $x; $y++): ?>
+                <span>*</span>
+            <?php endfor; ?>
+            <br>
+        <?php endfor; ?>
+    <?php else: ?>
+        <div style="color: #8b0000;">Please enter number which is more than 1</div>
+    <?php endif; ?>
+</div>
 </body>
 </html>
