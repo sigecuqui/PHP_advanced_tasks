@@ -19,8 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="219c095a-5b52-41df-a3b8-7f57e4441f40" name="Default Changelist" comment="weekday. form, inputs">
+    <list default="true" id="219c095a-5b52-41df-a3b8-7f57e4441f40" name="Default Changelist" comment="vardai. form, inputs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/form.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions/form.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +68,7 @@
       <updated>1603702763877</updated>
       <workItem from="1603702764911" duration="76572000" />
       <workItem from="1604387238811" duration="21948000" />
-      <workItem from="1604472587837" duration="19067000" />
+      <workItem from="1604472587837" duration="30634000" />
     </task>
     <task id="LOCAL-00001" summary="police report php task">
       <created>1603705438881</created>
@@ -349,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604499029008</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="vardai. form, inputs">
+      <created>1604500882194</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1604500882194</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -368,7 +376,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="functions: 2 primary numbers, my long version" />
     <MESSAGE value="functions: 2 primary numbers, shorten version" />
     <MESSAGE value="functions: matrix square" />
     <MESSAGE value="functions: names Upper Lower" />
@@ -393,7 +400,8 @@
     <MESSAGE value="weather choice" />
     <MESSAGE value="saukimas i kariuomene. form, inputs, select" />
     <MESSAGE value="weekday. form, inputs" />
-    <option name="LAST_COMMIT_MESSAGE" value="weekday. form, inputs" />
+    <MESSAGE value="vardai. form, inputs" />
+    <option name="LAST_COMMIT_MESSAGE" value="vardai. form, inputs" />
   </component>
   <component name="WindowStateProjectService">
     <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1604427245941">
@@ -408,10 +416,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="477" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1604493115496" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1604499030934">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1604500883531">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="-1687" y="75" key="Vcs.Push.Dialog.v2/-1920.0.1280.693/0.0.1920.1040@-1920.0.1280.693" timestamp="1603962306673" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1604499030934" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1604500883531" />
   </component>
 </project>
