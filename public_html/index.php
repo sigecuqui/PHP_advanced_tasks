@@ -12,12 +12,12 @@ $db_data = file_to_array(DB_FILE);
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="index__body">
-<?php include(ROOT . '/app/templates/nav.php'); ?>
+<?php include(ROOT . '/core/templates/nav.php'); ?>
 <main>
     <h1>WELCOME TO BBZ SHOP!</h1>
     <section class="product__section">
         <?php foreach ($db_data['items'] as $item): ?>
-            <div>
+            <div class="item">
                 <img src="<?php print $item['image']; ?>" alt="image">
                 <div class="product_bottom">
                     <h3><?php print $item['name']; ?></h3>

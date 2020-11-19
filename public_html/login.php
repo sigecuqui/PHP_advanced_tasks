@@ -13,7 +13,7 @@ $form = [
     ],
     'fields' => [
         'email' => [
-            'label' => 'Email',
+            'label' => 'EMAIL',
             'type' => 'text',
             'validators' => [
                 'validate_field_not_empty',
@@ -27,7 +27,7 @@ $form = [
             ],
         ],
         'password' => [
-            'label' => 'Password',
+            'label' => 'PASSWORD',
             'type' => 'text',
             'validators' => [
                 'validate_field_not_empty',
@@ -42,7 +42,7 @@ $form = [
     ],
     'buttons' => [
         'send' => [
-            'title' => 'Login',
+            'title' => 'LOGIN',
             'type' => 'submit',
             'extra' => [
                 'attr' => [
@@ -68,7 +68,7 @@ if ($clean_inputs) {
         $_SESSION['email'] = $clean_inputs['email'];
         $_SESSION['password'] = $clean_inputs['password'];
 
-        $text_output = '<p>Login successful</p>';
+        $text = 'Login successful';
         header('Location: admin/add.php');
     }
 }
@@ -85,11 +85,11 @@ if ($clean_inputs) {
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<?php include(ROOT . '/app/templates/nav.php'); ?>
+<?php include(ROOT . '/core/templates/nav.php'); ?>
 <main>
     <h2>Login</h2>
     <?php require ROOT . '/core/templates/form.tpl.php'; ?>
-    <?php if (isset($text_output)) print $text_output; ?>
+    <p><?php if (isset($text)) print $text; ?></p>
 </main>
 </body>
 </html>

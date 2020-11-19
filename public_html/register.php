@@ -13,7 +13,7 @@ $form = [
     ],
     'fields' => [
         'email' => [
-            'label' => 'Email',
+            'label' => 'EMAIL',
             'type' => 'text',
             'validators' => [
                 'validate_field_not_empty',
@@ -22,33 +22,33 @@ $form = [
             ],
             'extra' => [
                 'attr' => [
-                    'placeholder' => 'Įvesk emailą',
+                    'placeholder' => 'Enter email',
                     'class' => 'input-field',
                 ]
             ]
         ],
         'password' => [
-            'label' => 'Password',
+            'label' => 'PASSWORD',
             'type' => 'text',
             'validators' => [
                 'validate_field_not_empty',
             ],
             'extra' => [
                 'attr' => [
-                    'placeholder' => 'Įvesk slaptažodį',
+                    'placeholder' => 'Enter password',
                     'class' => 'input-field',
                 ]
             ]
         ],
         'password_repeat' => [
-            'label' => 'Password repeat',
+            'label' => 'PASSWORD REPEAT',
             'type' => 'text',
             'validators' => [
                 'validate_field_not_empty',
             ],
             'extra' => [
                 'attr' => [
-                    'placeholder' => 'Įvesk slaptažodį dar kartą',
+                    'placeholder' => 'Repeat password',
                     'class' => 'input-field',
                 ]
             ]
@@ -56,7 +56,7 @@ $form = [
     ],
     'buttons' => [
         'send' => [
-            'title' => 'Register',
+            'title' => 'REGISTER',
             'type' => 'submit',
             'extra' => [
                 'attr' => [
@@ -88,10 +88,10 @@ if ($clean_inputs) {
         // Save old data together with appended data back to file
         array_to_file($input_from_json, DB_FILE);
 
-        $text_output = '<p>Registration successful</p>';
+        $text = 'Registration successful';
         header('Location: login.php');
     } else {
-        $text_output = '<p>Registration failed</p>';
+        $text = 'Registration failed';
     }
 }
 
@@ -102,15 +102,15 @@ if ($clean_inputs) {
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Register</title>
+    <title>Registration</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<?php include(ROOT . '/app/templates/nav.php'); ?>
+<?php include(ROOT . '/core/templates/nav.php'); ?>
 <main>
-    <h2>Registration</h2>
+    <h2>REGISTRATION</h2>
     <?php require ROOT . '/core/templates/form.tpl.php'; ?>
-    <?php if (isset($text_output)) print $text_output; ?>
+    <p><?php if (isset($text)) print $text; ?></p>
 </main>
 </body>
 </html>

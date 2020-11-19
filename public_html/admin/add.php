@@ -13,7 +13,7 @@ $form = [
     ],
     'fields' => [
         'name' => [
-            'label' => 'Item',
+            'label' => 'ITEM',
             'type' => 'text',
             'validators' => [
                 'validate_field_not_empty',
@@ -26,7 +26,7 @@ $form = [
             ],
         ],
         'price' => [
-            'label' => 'Price',
+            'label' => 'PRICE',
             'type' => 'text',
             'validators' => [
                 'validate_field_not_empty',
@@ -44,7 +44,7 @@ $form = [
             ],
         ],
         'image' => [
-            'label' => 'Image URL',
+            'label' => 'IMAGE URL',
             'type' => 'text',
             'validators' => [
                 'validate_field_not_empty',
@@ -60,7 +60,7 @@ $form = [
     ],
     'buttons' => [
         'send' => [
-            'title' => 'Add',
+            'title' => 'ADD',
             'type' => 'submit',
             'extra' => [
                 'attr' => [
@@ -98,7 +98,7 @@ if ($clean_inputs) {
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-<?php include(ROOT . '/app/templates/nav.php'); ?>
+<?php include(ROOT . '/core/templates/nav.php'); ?>
 <main>
     <h2>ADD ITEM</h2>
     <?php require ROOT . '/core/templates/form.tpl.php'; ?>
