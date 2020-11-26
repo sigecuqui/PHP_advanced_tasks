@@ -76,6 +76,13 @@ $clean_inputs = get_clean_input($form);
 if ($clean_inputs) {
     $is_valid = validate_form($form, $clean_inputs);
 
+    $fileDB = new FileDB(DB_FILE);
+    $fileDB->load();
+    $input_from_json = $fileDB->getData();
+    $input_from_json['users'][] = $clean_inputs;
+    $fileDB->setData($input_from_json);
+    $fileDB->save();
+
     if ($is_valid) {
         $input = file_to_array(DB_FILE);
         $input['items'][] = $clean_inputs;

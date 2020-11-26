@@ -2,7 +2,11 @@
 
 require '../bootloader.php';
 
-$db_data = file_to_array(DB_FILE);
+$fileDB = new fileDB(DB_FILE);
+$fileDB->load();
+
+$items = $fileDB->getRowsWhere('items');
+
 
 ?>
 <html>
@@ -15,6 +19,17 @@ $db_data = file_to_array(DB_FILE);
 <?php include(ROOT . '/core/templates/nav.php'); ?>
 <main>
     <h1>WELCOME TO BBZ SHOP!</h1>
+    <section class="product__section">
+        <?php foreach ($items as $item): ?>
+            <div>
+                <img src="<?php print $item['image']; ?>" alt="item image">
+                <div>
+                    <h3><?php print $item['name']; ?></h3>
+                    <p><?php print $item['price']; ?> EUR</p>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </section>
 </main>
 </body>
 </html>

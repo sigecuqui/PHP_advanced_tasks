@@ -19,12 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="219c095a-5b52-41df-a3b8-7f57e4441f40" name="Default Changelist" comment="SHOP-PROJECT. objective programming">
+    <list default="true" id="219c095a-5b52-41df-a3b8-7f57e4441f40" name="Default Changelist" comment="SHOP-PROJECT. objective programming. register changed.">
+      <change afterPath="$PROJECT_DIR$/public_html/install.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/data/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/data/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/classes/FileDB.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/classes/FileDB.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/text.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/text.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/functions/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/functions/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/functions/form/validators.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/functions/form/validators.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/admin/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/admin/add.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/text.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +59,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../shop project/public_html/css/style.css" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -105,14 +109,7 @@
       <workItem from="1606203261039" duration="11467000" />
       <workItem from="1606287921245" duration="2233000" />
       <workItem from="1606292442767" duration="9254000" />
-      <workItem from="1606374500222" duration="4584000" />
-    </task>
-    <task id="LOCAL-00001" summary="police report php task">
-      <created>1603705438881</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1603705438881</updated>
+      <workItem from="1606374500222" duration="11692000" />
     </task>
     <task id="LOCAL-00002" summary="police report php task taisyta">
       <created>1603705705696</created>
@@ -450,7 +447,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606302435884</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="SHOP-PROJECT. objective programming. register changed.">
+      <created>1606379400197</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1606379400197</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,7 +473,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="functions: matrix winner" />
     <MESSAGE value="functions: references" />
     <MESSAGE value="functions: references: values" />
     <MESSAGE value="functions: references: values change" />
@@ -494,7 +497,8 @@
     <MESSAGE value="SHOP-PROJECT" />
     <MESSAGE value="SHOP-PROJECT. changed" />
     <MESSAGE value="SHOP-PROJECT. objective programming" />
-    <option name="LAST_COMMIT_MESSAGE" value="SHOP-PROJECT. objective programming" />
+    <MESSAGE value="SHOP-PROJECT. objective programming. register changed." />
+    <option name="LAST_COMMIT_MESSAGE" value="SHOP-PROJECT. objective programming. register changed." />
   </component>
   <component name="WindowStateProjectService">
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606129314121">
@@ -505,10 +509,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="435" y="50" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1606129497907" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1606305573943">
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1606387018590">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1606305573943" />
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1606387018590" />
     <state x="520" y="239" key="Github.ShareDialog" timestamp="1603705396225">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -517,15 +521,15 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="434" y="64" key="NewPhpClassDialog/0.0.1280.680@0.0.1280.680" timestamp="1606122423028" />
-    <state x="477" y="264" key="NewPhpFileDialog" timestamp="1606122504646">
+    <state x="477" y="264" key="NewPhpFileDialog" timestamp="1606385834318">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="477" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1606122504646" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1606302438186">
+    <state x="477" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1606385834318" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1606379411260">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="-1687" y="75" key="Vcs.Push.Dialog.v2/-1920.0.1280.693/0.0.1920.1040@-1920.0.1280.693" timestamp="1603962306673" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606302438186" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606379411260" />
     <state x="157" y="0" width="1035" height="667" key="dock-window-1" timestamp="1605522800620">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
