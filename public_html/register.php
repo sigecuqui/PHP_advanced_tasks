@@ -76,19 +76,17 @@ $form = [
 $clean_inputs = get_clean_input($form);
 
 if ($clean_inputs) {
-    $is_valid = validate_form($form, $clean_inputs);
-
-    if ($is_valid) {
+    $success = validate_form($form, $clean_inputs);
+    if ($success) {
         unset($clean_inputs['password_repeat']);
 
-        // Get data from file
-        $input_from_json = file_to_array(DB_FILE);
-        // Append new data from form
+        $fileDB = new FileDB(DB_FILE);
+        $fileDB->load();
+        $input_from_json = $fileDB->getData();
         $input_from_json['users'][] = $clean_inputs;
-        // Save old data together with appended data back to file
-        array_to_file($input_from_json, DB_FILE);
+        $fileDB->setData($input_from_json);
+        $fileDB->save();
 
-        $text = 'Registration successful';
         header('Location: login.php');
     } else {
         $text = 'Registration failed';

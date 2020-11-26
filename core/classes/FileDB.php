@@ -91,16 +91,14 @@ class FileDB
     }
 
     /**
-     * Check is $table_name exists in $data array
+     * Checks if this index already exists in data.
      *
-     * @param $table_name
+     * @param string $table_name
      * @return bool
      */
     public function tableExists(string $table_name): bool
     {
-        if (isset($this->data[$table_name])) {
-            return true;
-        }
+        return array_key_exists($table_name, $this->getData());
     }
 
     /**
@@ -256,5 +254,33 @@ class FileDB
         }
 
         return $results;
+    }
+
+    /**
+     * Return first row of the table
+     *
+     * @param string $table_name
+     * @param array $conditions
+     * @return false|array
+     */
+    public function getRowWhere(string $table_name, array $conditions = [])
+    {
+        foreach ($this->data[$table_name] as $row_id => $row) {
+            $found = true;
+
+            foreach ($conditions as $condition_id => $condition_value) {
+
+                if ($row[$condition_id] !== $condition_value) {
+                    $found = false;
+                    break;
+                }
+            }
+
+            if ($found) {
+               return $row;
+            }
+        }
+
+        return false;
     }
 }
