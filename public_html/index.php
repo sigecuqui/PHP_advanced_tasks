@@ -7,7 +7,6 @@ $fileDB->load();
 
 $items = $fileDB->getRowsWhere('items');
 
-
 ?>
 <html>
 <head>
