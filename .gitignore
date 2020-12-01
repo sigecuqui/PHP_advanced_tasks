@@ -1,3 +1,5 @@
 app/data
 .idea
 .vscode
+vendor
+composer.lock

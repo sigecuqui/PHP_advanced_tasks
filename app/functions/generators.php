@@ -1,5 +1,7 @@
 <?php
 
+use App\App;
+
 /**
  * Generate navigation depending on login status
  *
@@ -7,7 +9,7 @@
  */
 function nav(): array
 {
-    if (is_logged_in()) {
+    if (App::$session->getUser()) {
         return [
             'HOME' => '/index.php',
             'ADD' => '/admin/add.php',

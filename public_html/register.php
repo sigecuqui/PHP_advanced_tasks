@@ -1,8 +1,10 @@
 <?php
 
+use App\App;
+
 require '../bootloader.php';
 
-if (is_logged_in()) {
+if (App::$session->getUser()) {
     header('Location: login.php');
     exit();
 }
@@ -80,12 +82,7 @@ if ($clean_inputs) {
     if ($success) {
         unset($clean_inputs['password_repeat']);
 
-        $fileDB = new FileDB(DB_FILE);
-        $fileDB->load();
-        $input_from_json = $fileDB->getData();
-        $input_from_json['users'][] = $clean_inputs;
-        $fileDB->setData($input_from_json);
-        $fileDB->save();
+        App::$db->insertRow('users', $clean_inputs);
 
         header('Location: login.php');
     } else {

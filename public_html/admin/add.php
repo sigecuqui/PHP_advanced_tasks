@@ -1,8 +1,10 @@
 <?php
 
+use App\App;
+
 require '../../bootloader.php';
 
-if (!is_logged_in()) {
+if (!App::$session->getUser()) {
     header('Location: login.php');
     exit();
 }
@@ -76,12 +78,7 @@ $clean_inputs = get_clean_input($form);
 if ($clean_inputs) {
     $is_valid = validate_form($form, $clean_inputs);
 
-    $fileDB = new FileDB(DB_FILE);
-    $fileDB->load();
-    $input_from_json = $fileDB->getData();
-    $input_from_json['users'][] = $clean_inputs;
-    $fileDB->setData($input_from_json);
-    $fileDB->save();
+    $fileDB = App::$db->insertRow('items', $clean_inputs);
 
     if ($is_valid) {
         $input = file_to_array(DB_FILE);

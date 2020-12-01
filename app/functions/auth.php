@@ -1,5 +1,7 @@
 <?php
 
+use App\App;
+
 /**
  * Check if user is logged in
  *
@@ -8,10 +10,8 @@
 function is_logged_in(): bool
 {
     if ($_SESSION) {
-        $fileDB = new FileDB(DB_FILE);
-        $fileDB->load();
 
-        return (bool)$fileDB->getRowWhere('users', [
+        return (bool)App::$db->getRowWhere('users', [
             'email' => $_SESSION['email'],
             'password' => $_SESSION['password']
         ]);

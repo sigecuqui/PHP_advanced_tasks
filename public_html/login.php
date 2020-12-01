@@ -1,8 +1,10 @@
 <?php
 
+use App\App;
+
 require '../bootloader.php';
 
-if (is_logged_in()) {
+if (App::$session->getUser()) {
     header('Location: admin/add.php');
     exit();
 }

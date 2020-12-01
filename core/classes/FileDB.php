@@ -1,5 +1,6 @@
 <?php
 
+namespace Core;
 /**
  * Class FileDB
  */
@@ -277,7 +278,7 @@ class FileDB
             }
 
             if ($found) {
-               return $row;
+                return $row;
             }
         }
 

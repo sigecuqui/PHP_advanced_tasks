@@ -1,12 +1,10 @@
 <?php
 
+use App\App;
+
 require '../bootloader.php';
 
-$fileDB = new fileDB(DB_FILE);
-$fileDB->load();
-
-$items = $fileDB->getRowsWhere('items');
-
+$items = App::$db->getRowsWhere('items');
 ?>
 <html>
 <head>
