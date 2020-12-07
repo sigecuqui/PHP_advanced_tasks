@@ -1,73 +1,79 @@
 <?php
 
-
 namespace Core;
-
 
 use App\App;
 
 class Session
 {
-    private $user;
+    private ?array $user = null;
 
     /**
-     * Session constructor.
+     * Session constructor
      */
     public function __construct()
     {
+        session_start();
         $this->loginFromCookie();
     }
 
     /**
-     * Login $user from COOKIE
-     */
-    public function loginFromCookie()
-    {
-        if ($_SESSION) {
-            $this->login($_SESSION['email'], $_SESSION['password']);
-        }
-    }
-
-    /**
-     * Check if $user exists
+     * Login user from $_SESSION
      *
-     * @param $email
-     * @param $password
      * @return bool
      */
-    public function login($email, $password)
+    public function loginFromCookie(): bool
     {
-        if ($user = App::$db->getRowWhere('users', [
-            'email' => $email,
-            'password' => $password
-        ])) {
-            $_SESSION['email'] = $email;
-            $_SESSION['password'] = $password;
-
-            $this->user = $user;
-
-            return true;
+        if ($_SESSION) {
+            return $this->login($_SESSION['email'], $_SESSION['password']);
         }
 
         return false;
     }
 
     /**
-     * Return $user property
+     * Login user
      *
-     * @return array
+     * @param string $email
+     * @param string $password
+     * @return bool
      */
-    public function getUser()
+    public function login(string $email, string $password): bool
     {
-        return $this->user ?? [];
+        $user = App::$db->getRowWhere('users', [
+            'email' => $email,
+            'password' => $password,
+        ]);
+
+        if ($user) {
+            $_SESSION['email'] = $email;
+            $_SESSION['password'] = $password;
+            $this->user = $user;
+
+            return true;
+        }
+
+        $this->user = null;
+
+        return false;
     }
 
     /**
-     * $user logout. Redirect if $redirect is given
+     * Getter for private array $user
+     *
+     * @return array|null
+     */
+    public function getUser(): ?array
+    {
+        return $this->user;
+    }
+
+    /**
+     * Logout user and redirect to another location
      *
      * @param string|null $redirect
      */
-    public function logout(?string $redirect = null)
+    public function logout(?string $redirect = null): void
     {
         $_SESSION = [];
         session_destroy();
