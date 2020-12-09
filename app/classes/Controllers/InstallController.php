@@ -1,12 +1,14 @@
 <?php
 
+
 namespace App\Controllers;
 
-use App\App;
-use App\Views\BasePage;
-use Core\View;
 
-class HomeController extends \App\Abstracts\Controller
+use App\Abstracts\Controller;
+use App\App;
+use Core\FileDB;
+
+class InstallController extends Controller
 {
 
     /**
@@ -52,17 +54,12 @@ class HomeController extends \App\Abstracts\Controller
      */
     function index(): ?string
     {
-        $content = new View([
-            'title' => 'Welcome to BBZ shop',
-            'products' => App::$db->getRowsWhere('items')
-        ]);
+        App::$db = new FileDB(DB_FILE);
 
-        $page = new BasePage([
-            'title' => 'SHOP',
-            'content' => $content->render(ROOT . '/app/templates/content/index.tpl.php')
-        ]);
+        App::$db->createTable('users');
+        App::$db->insertRow('users', ['email' => 'test@test.lt', 'password' => 'test']);
 
-        return $page->render();
+        App::$db->createTable('items');
         // TODO: Implement index() method.
     }
 }

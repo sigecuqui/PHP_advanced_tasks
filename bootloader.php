@@ -1,7 +1,5 @@
 <?php
 
-use App\App;
-
 define('ROOT', __DIR__);
 define('DB_FILE', ROOT . '/app/data/db.json');
 
@@ -18,5 +16,4 @@ require 'core/functions/form/validators.php';
 //Composer
 
 require 'vendor/autoload.php';
-
-$app = new App();
+require 'app\config\routes.php';

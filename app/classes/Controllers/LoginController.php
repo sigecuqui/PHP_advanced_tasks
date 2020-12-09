@@ -22,7 +22,7 @@ class LoginController extends GuestController
         ]);
     }
 
-    public function index()
+    public function login()
     {
 
         if ($this->form->validate()) {
@@ -31,7 +31,7 @@ class LoginController extends GuestController
             App::$session->login($clean_inputs['email'], $clean_inputs['password']);
 
             if (App::$session->getUser()) {
-                header('Location: Admin/add.php');
+                header('Location: /add');
                 exit();
             }
         }

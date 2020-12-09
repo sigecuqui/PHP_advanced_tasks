@@ -29,7 +29,7 @@ class ListController extends AuthController
 
     }
 
-    public function index()
+    public function editList()
     {
         if (Form::action()) {
             $this->form = new DeleteForm();
@@ -44,7 +44,7 @@ class ListController extends AuthController
 
         foreach ($rows as $id => $row) {
             $this->link = new Link([
-                'link' => "/admin/edit.php?id={$id}",
+                'link' => "/edit?id={$id}",
                 'text' => 'Edit'
             ]);
 

@@ -3,7 +3,6 @@
 
 namespace App\Controllers;
 
-
 use App\App;
 use App\Controllers\Base\GuestController;
 use App\Views\BasePage;
@@ -23,7 +22,7 @@ class RegisterController extends GuestController
         ]);
     }
 
-    public function index()
+    public function register()
     {
 
         if ($this->form->validate()) {
@@ -33,7 +32,7 @@ class RegisterController extends GuestController
 
             App::$db->insertRow('users', $clean_inputs);
 
-            header('Location: login.php');
+            header('Location: /login');
         }
 
         $this->page->setContent($this->form->render());

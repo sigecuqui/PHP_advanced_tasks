@@ -22,7 +22,7 @@ class AddController extends AuthController
         ]);
     }
 
-    public function index()
+    public function add()
     {
 
         if ($this->form->validate()) {

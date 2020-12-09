@@ -21,12 +21,12 @@ class EditController extends AuthController
         ]);
     }
 
-    public function index()
+    public function edit()
     {
         $row_id = $_GET['id'] ?? null;
 
         if ($row_id === null) {
-            header("Location: /admin/list.php");
+            header("Location: /list");
             exit();
         }
         $this->form->fill(App::$db->getRowById('items', $row_id));
@@ -34,8 +34,8 @@ class EditController extends AuthController
         if ($this->form->validate()) {
             $clean_inputs = $this->form->values();
             App::$db->updateRow('items', $row_id, $clean_inputs);
-            header('Location: /index.php');
-            exit();
+//            header('Location: /index');
+//            exit();
         }
         $this->page->setContent($this->form->render());
 

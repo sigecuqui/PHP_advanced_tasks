@@ -6,7 +6,7 @@ use App\App;
 
 class AuthController
 {
-    protected $redirect = '/login.php';
+    protected $redirect = '/login';
     public function __construct()
     {
         if (!App::$session->getUser()) {

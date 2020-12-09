@@ -2,22 +2,28 @@
 
 namespace App;
 
-use Core\Cookie;
 use Core\FileDB;
+use Core\Router;
 use Core\Session;
 
 class App
 {
-    public static $db;
-    public static $session;
-    public static $cookie;
+    public static FileDB $db;
+    public static Session $session;
+    public static Router $router;
 
     public function __construct()
     {
         self::$db = new FileDB(DB_FILE);
         self::$db->load();
+
         self::$session = new Session();
-        self::$cookie = new Cookie();
+        self::$router = new Router();
+    }
+
+    public function run()
+    {
+        print self::$router::run();
     }
 
     public function __destruct()
@@ -25,4 +31,5 @@ class App
         // TODO: Implement __destruct() method.
         self::$db->save();
     }
+
 }
